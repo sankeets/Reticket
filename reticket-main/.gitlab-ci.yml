@@ -1,0 +1,53 @@
+stages:
+  # Jobs in "lint" stage will be run in parallell
+  - lint
+  # If they succeed, the jobs in the "test" stage will be run in parallell
+  - test
+
+lint_frontend:
+  # This job should be run as part of the "lint" stage
+  stage: lint
+  # Use a docker image with node preinstalled
+  image: node:latest
+  script:
+    # Go into frontend
+    - cd frontend
+    # Install requirements
+    - npm install eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
+    # Run linting
+    - npm run lint
+
+unit_tests_frontend:
+  # This job should be run as part of the "test" stage
+  stage: test
+  # Use a docker image with node preinstalled
+  image: node:latest
+  script:
+    # Go into frontend
+    - cd frontend
+    # Install requirements
+    - npm install
+    # Run tests
+    - npm run test
+
+lint_backend:
+  # This job should be run as part of the "lint" stage
+  stage: lint
+  # Use a docker image with python preinstalled
+  image: "python:3.10"
+  script:
+    # Go into frontend
+    - cd backend
+    # Install requirements
+    - python -m pip install pylint
+    # Run linting
+    - python -m pylint .
+
+unit_tests_backend:
+  # This job should be run as part of the "test" stage
+  stage: test
+  image: "python:3.10"
+  script:
+    - cd backend
+    - pip install -r requirements.txt
+    - python manage.py test

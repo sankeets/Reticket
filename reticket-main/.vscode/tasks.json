@@ -1,0 +1,22 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Migrate",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/env/bin/python ${workspaceFolder}/backend/manage.py migrate"
+    },
+    {
+      "label": "Make migrations",
+      "type": "shell",
+      "command": "${workspaceFolder}/backend/env/bin/python ${workspaceFolder}/backend/manage.py makemigrations"
+    },
+    {
+      "label": "Migrate Windows",
+      "type": "shell",
+      "command": "python ${workspaceFolder}\\backend\\manage.py migrate"
+    }
+  ]
+}

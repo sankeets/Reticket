@@ -1,0 +1,46 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Django: Start",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/manage.py",
+      "args": ["runserver"],
+      "django": true,
+      "cwd": "${workspaceFolder}/backend",
+      "preLaunchTask": "Migrate"
+    },
+    {
+      "name": "Windows Django: Start",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\backend\\manage.py",
+      "args": ["runserver"],
+      "django": true,
+      "cwd": "${workspaceFolder}\\backend",
+      "preLaunchTask": "Migrate Windows"
+    },
+    {
+      "name": "Django: Run tests",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/manage.py",
+      "args": ["test"],
+      "django": true,
+      "cwd": "${workspaceFolder}/backend"
+    },
+    {
+      "name": "Windows Django: Run tests",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}\\backend\\manage.py",
+      "args": ["test"],
+      "django": true,
+      "cwd": "${workspaceFolder}\\backend"
+    }
+  ]
+}

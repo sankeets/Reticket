@@ -1,0 +1,10 @@
+{
+  "python.defaultInterpreterPath": "backend/env/bin/python",
+  "python.analysis.extraPaths": ["backend"],
+  "python.formatting.provider": "autopep8",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
+}
